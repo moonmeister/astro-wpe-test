@@ -11,9 +11,9 @@ export const prerender = false; // SSR generation
   <section slot="overview">
     <h2>Image Service</h2>
     <p>
-      This page implements the Astro image service. It uses the <code
-        >astro:assets</code
-      > package to image from various sources and optimize them for the web.
+      This page implements the Astro image service. It uses the
+      <code>astro:assets</code> package to image from various sources and optimize
+      them for the web.
     </p>
   </section>
   <section>
@@ -54,7 +54,7 @@ export const prerender = false; // SSR generation
     good={[
       "The images are served!",
       "Cache-Control headers are set!",
-      "Images are not written to the filesystem. Only cached by the CDN",
+      "Images are not written to the filesystem for SSR. Only cached by the CDN.",
       "Works with both static pages and server-side rendered pages.",
     ]}
     warning={[]}

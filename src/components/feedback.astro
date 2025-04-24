@@ -1,13 +1,13 @@
 ---
 import { marked } from "marked";
-const { bad, good, warning } = Astro.props;
+const { bad, good, warning, reading } = Astro.props;
 ---
 
 <section>
   {
     good?.length > 0 && (
       <section>
-        <h2 style="color: green">✅ Good:</h2>
+        <h4 style="color: green">✅ Good:</h4>
         <ul>
           {good.map((item) => (
             <li set:html={marked.parse(item)} />
@@ -19,7 +19,7 @@ const { bad, good, warning } = Astro.props;
   {
     warning?.length > 0 && (
       <section>
-        <h2 style="color: orange;">⚠️ Warning:</h2>
+        <h4 style="color: orange;">⚠️ Warning:</h4>
         <ul>
           {warning.map((item) => (
             <li set:html={marked.parse(item)} />
@@ -31,9 +31,21 @@ const { bad, good, warning } = Astro.props;
   {
     bad?.length > 0 && (
       <section>
-        <h2 style="color:red;">⛔️ Bad:</h2>
+        <h4 style="color:red;">⛔️ Bad:</h4>
         <ul>
           {bad.map((item) => (
+            <li set:html={marked.parse(item)} />
+          ))}
+        </ul>
+      </section>
+    )
+  }
+  {
+    reading?.length > 0 && (
+      <section>
+        <h4>ℹ️ More Reading:</h4>
+        <ul>
+          {reading.map((item) => (
             <li set:html={marked.parse(item)} />
           ))}
         </ul>

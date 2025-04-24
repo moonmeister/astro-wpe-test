@@ -1,14 +1,14 @@
 ---
 import Feedback from "../components/feedback.astro";
-import Wip from "../components/wip.astro";
 import BaseLayout from "../layouts/base.astro";
 
 export const prerender = false; // Server-side rendering
 
-Astro.response.headers.set(
-  "Cache-Control",
-  "public, max-age=30, stale-while-revalidate=30"
-);
+let counter = (await Astro.session?.get("counter")) || 0;
+
+counter += 1;
+
+Astro.session?.set("counter", counter);
 ---
 
 <BaseLayout>
@@ -21,9 +21,18 @@ Astro.response.headers.set(
     </p>
   </section>
 
-  <Wip />
+  <section>
+    <h3>Session Counter:</h3>
+    <p>{counter}</p>
+  </section>
 
-  <!-- <Feedback
-    good={["`Cache-Control` headers are correctly set and respected!"]}
-  /> -->
+  <Feedback
+    good={["Sessions work!"]}
+    bad={[
+      'Sessions based on the filesystem `driver: "fs"` may appear to work but are not persistent or consistent if your application is scaling across multiple containers. Using external session storage like Redis is recommended.',
+    ]}
+    reading={[
+      "https://docs.astro.build/en/reference/configuration-reference/#sessiondriver",
+    ]}
+  />
 </BaseLayout>

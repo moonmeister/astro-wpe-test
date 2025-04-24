@@ -15,7 +15,6 @@
     "@picocss/pico": "^2.1.1",
     "astro": "^5.7.5",
     "marked": "^15.0.10",
-    "pnpm": "10.9.0",
     "sharp": "^0.34.1",
     "svelte": "^5.28.2",
     "typescript": "^5.8.3"
