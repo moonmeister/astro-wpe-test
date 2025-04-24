@@ -1,0 +1,18 @@
+---
+import Feedback from "../components/feedback.astro";
+import BaseLayout from "../layouts/base.astro";
+
+export const prerender = true; // Static site generation
+---
+
+<BaseLayout>
+  <img src="/cute_cat.jpg" alt="Cute Cat" width="400" />
+
+  <Feedback
+    good={["The asset (image) is served!"]}
+    warning={[
+      "The Asset's default `Cache-Control` headers are `public, max-age=0`. Meaning no caching is happening on this static asset from the `public` folder.",
+    ]}
+    bad={[]}
+  />
+</BaseLayout>
