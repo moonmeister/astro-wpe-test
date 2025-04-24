@@ -1,9 +1,10 @@
 ---
 import Feedback from "../components/feedback.astro";
-import Wip from "../components/wip.astro";
+import { Image, Picture } from "astro:assets";
 import BaseLayout from "../layouts/base.astro";
+import Cat from "../assets/cat.jpg";
 
-export const prerender = true; // Static site generation
+export const prerender = false; // SSR generation
 ---
 
 <BaseLayout>
@@ -16,14 +17,47 @@ export const prerender = true; // Static site generation
       nihil eum minus ullam!
     </p>
   </section>
+  <section>
+    <Image
+      src="/cute_cat.jpg"
+      alt="A cat"
+      width={400}
+      height={400}
+      loading={"lazy"}
+    />
 
-  <Wip />
+    <Image
+      src={Cat}
+      alt="A cat"
+      widths={[240, 540, 720, Cat.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${Cat.width}px`}
+      loading={"lazy"}
+    />
 
-  <!-- <Feedback
-    good={["The page is served!"]}
-    warning={[
-      "The page's default `Cache-Control` headers are `public, max-age=0`. Meaning no caching is happening on this static page.",
+    <Image
+      src="https://upload.wikimedia.org/wikipedia/commons/7/74/A-Cat.jpg"
+      alt="A cat"
+      widths={[240, 540, 720, 1280]}
+      inferSize
+      loading={"lazy"}
+      format="avif"
+    />
+
+    <Picture
+      src={Cat}
+      alt="A cat"
+      formats={["avif", "webp", "jpg"]}
+      loading={"lazy"}
+      decoding={"async"}
+    />
+  </section>
+  <Feedback
+    good={[
+      "The images are served!",
+      "Cache-Control headers are set!",
+      "Images are not written to the filesystem. Only cached by the CDN",
     ]}
+    warning={[]}
     bad={[]}
-  /> -->
+  />
 </BaseLayout>

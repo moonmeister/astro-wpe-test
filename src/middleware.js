@@ -1,4 +1,4 @@
-import { defineMiddleware, lo } from "astro:middleware";
+import { defineMiddleware } from "astro:middleware";
 import { randomUUID } from "node:crypto";
 
 /**
