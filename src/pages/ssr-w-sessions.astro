@@ -1,0 +1,29 @@
+---
+import Feedback from "../components/feedback.astro";
+import Wip from "../components/wip.astro";
+import BaseLayout from "../layouts/base.astro";
+
+export const prerender = false; // Server-side rendering
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=30, stale-while-revalidate=30"
+);
+---
+
+<BaseLayout>
+  <section slot="overview">
+    <h2>Server with Sessions</h2>
+    <p>
+      This page is a server-side rendered page. It is generated on the server
+      and sent to the client. The page has `Cache-Control` headers set to allow
+      caching.
+    </p>
+  </section>
+
+  <Wip />
+
+  <!-- <Feedback
+    good={["`Cache-Control` headers are correctly set and respected!"]}
+  /> -->
+</BaseLayout>

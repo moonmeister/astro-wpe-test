@@ -1,0 +1,29 @@
+---
+import Feedback from "../components/feedback.astro";
+import Wip from "../components/wip.astro";
+import BaseLayout from "../layouts/base.astro";
+
+export const prerender = true; // Static site generation
+---
+
+<BaseLayout>
+  <section slot="overview">
+    <h2>Image Service</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam
+      exercitationem voluptatem accusamus excepturi officiis ducimus debitis
+      eveniet tempora deserunt reiciendis sequi corrupti repellendus id, officia
+      nihil eum minus ullam!
+    </p>
+  </section>
+
+  <Wip />
+
+  <!-- <Feedback
+    good={["The page is served!"]}
+    warning={[
+      "The page's default `Cache-Control` headers are `public, max-age=0`. Meaning no caching is happening on this static page.",
+    ]}
+    bad={[]}
+  /> -->
+</BaseLayout>
