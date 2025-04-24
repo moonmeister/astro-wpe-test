@@ -14,9 +14,9 @@ export const prerender = true; // Static site generation
   </div>
 
   <Feedback
-    good={["The asset (image) is served!"]}
+    good={["The asset (image, css or js) is served!"]}
     warning={[
-      "The Asset's default `Cache-Control` headers are `public, max-age=0`. Meaning no caching is happening on this static asset from the `public` folder.",
+      "The Asset's default `Cache-Control` headers are `public, max-age=0`. The Headless Platform boosts the TTL to `max-age=10`. Meaning little caching is happening on this static asset from the `public` folder.",
     ]}
     bad={[]}
   />

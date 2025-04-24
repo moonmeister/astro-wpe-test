@@ -1,15 +1,16 @@
 ---
-import Wip from "../components/wip.astro";
+import Feedback from "../components/feedback.astro";
 import BaseLayout from "../layouts/base.astro";
 
 export const prerender = false; // Server-side rendering
 ---
 
 <BaseLayout>
-  <p>
-    This is a test site for the WP Engine Headless Platform. It is built using
-    Astro, various pages implement different features to test the platform.
-  </p>
-
-  <Wip < BaseLayout /></BaseLayout
->
+  <Feedback
+    good={["The page is served!"]}
+    warning={[
+      "For SSR pages `Cache-Control` headers are unset by default. Meaning no caching is happening on this Server Rendered page.",
+    ]}
+    bad={[]}
+  />
+</BaseLayout>
