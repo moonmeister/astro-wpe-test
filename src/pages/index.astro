@@ -1,22 +1,21 @@
 ---
+import Feedback from "../components/feedback.astro";
 import BaseLayout from "../layouts/base.astro";
+
+export const prerender = true; // Static site generation
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <BaseLayout>
-      <p>
-        This is a test site for the WP Engine Headless Platform. It is built
-        using Astro, various pages implement different features to test the
-        platform.
-      </p>
-    </BaseLayout>
-  </body>
-</html>
+<BaseLayout>
+  <p>
+    This is a test site for the WP Engine Headless Platform. It is built using
+    Astro, various pages implement different features to test the platform.
+  </p>
+
+  <Feedback
+    good={["The page is served!"]}
+    warning={[
+      "The page's default `Cache-Control` headers are `public, max-age=0`. Meaning no caching is happening on this static page.",
+    ]}
+    bad={[]}
+  />
+</BaseLayout>

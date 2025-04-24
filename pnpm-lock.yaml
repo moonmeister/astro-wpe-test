@@ -11,9 +11,15 @@ importers:
       '@astrojs/node':
         specifier: ^9.2.1
         version: 9.2.1(astro@5.7.5(rollup@4.40.0)(typescript@5.8.3))
+      '@picocss/pico':
+        specifier: ^2.1.1
+        version: 2.1.1
       astro:
         specifier: ^5.7.5
         version: 5.7.5(rollup@4.40.0)(typescript@5.8.3)
+      marked:
+        specifier: ^15.0.10
+        version: 15.0.10
       pnpm:
         specifier: 10.9.0
         version: 10.9.0
@@ -325,6 +331,9 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@picocss/pico@2.1.1':
+    resolution: {integrity: sha512-kIDugA7Ps4U+2BHxiNHmvgPIQDWPDU4IeU6TNRdvXQM1uZX+FibqDQT2xUOnnO2yq/LUHcwnGlu1hvf4KfXnMg==}
 
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
@@ -872,6 +881,11 @@ packages:
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
+
+  marked@15.0.10:
+    resolution: {integrity: sha512-BXzsfFiR2UqXFKRwpugWuCYi9mWd1aX/Yns/X52xWfvfen9lnGEDbJw9ZEjjvLZVqntqT2gX45eYvqb2dIokDw==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   mdast-util-definitions@6.0.0:
     resolution: {integrity: sha512-scTllyX6pnYNZH/AIp/0ePz6s4cZtARxImwoPJ7kS42n+MnVsI4XbnG6d4ibehRIldYMWM2LD7ImQblVhUejVQ==}
@@ -1752,6 +1766,8 @@ snapshots:
 
   '@oslojs/encoding@1.1.0': {}
 
+  '@picocss/pico@2.1.1': {}
+
   '@rollup/pluginutils@5.1.4(rollup@4.40.0)':
     dependencies:
       '@types/estree': 1.0.7
@@ -2379,6 +2395,8 @@ snapshots:
       source-map-js: 1.2.1
 
   markdown-table@3.0.4: {}
+
+  marked@15.0.10: {}
 
   mdast-util-definitions@6.0.0:
     dependencies:

@@ -1,17 +1,32 @@
-<header>
-  <h1>Astro | WP Engine Headless Platform Test Site</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Static</a></li>
-      <li><a href="/ssr">Server</a></li>
-      <li><a href="/client">Client only</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <slot />
-</main>
-<footer>
-  <p>Powered by Astro</p>
-  <p>Generator: {Astro.generator}</p>
-</footer>
+---
+import "@picocss/pico";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="container">
+    <header>
+      <h1>Astro | WP Engine Headless Platform Test Site</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Static</a></li>
+          <li><a href="/ssr">Server</a></li>
+          <li><a href="/client">Client only</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>Powered by Astro</p>
+      <p>Generator: {Astro.generator}</p>
+    </footer>
+  </body>
+</html>
