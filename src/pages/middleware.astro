@@ -1,0 +1,29 @@
+---
+import Feedback from "../components/feedback.astro";
+import BaseLayout from "../layouts/base.astro";
+
+export const prerender = false; // Server-side rendering
+
+Astro.response.headers.set("Cache-Control", "public, max-age=10");
+---
+
+<BaseLayout>
+  <section>
+    <h2>Middleware</h2>
+    <p>
+      This page shows a randomly generated UUID. Based on request. It should
+      change every request. If you refresh quickly you'll see the same UUID,
+      give it 10 seconds and the UUID will change.
+    </p>
+    <h3>UUID:</h3>
+    <p>{Astro.locals.uuid}</p>
+  </section>
+  <Feedback
+    good={[
+      "The page is rendered with the UUID and this appears to work locally!",
+    ]}
+    warning={[
+      "The WP Engine Headless platform cache sits in front of the server. Astro Middleware is run on the server. This means middleware is not executed if page is served from the cache! If you need middleware to be uncached, you can't set `Cache-Control` headers.",
+    ]}
+  />
+</BaseLayout>
