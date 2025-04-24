@@ -12,7 +12,7 @@
 
 <section>
   {#if dogImage?.status === "success"}
-    <h2>Here's a cute dog for you!</h2>
+    <h3>Here's a cute dog for you!</h3>
 
     <img src={dogImage.message} alt="Random Dog" />
   {:else}

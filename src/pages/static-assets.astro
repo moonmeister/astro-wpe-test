@@ -6,12 +6,17 @@ export const prerender = true; // Static site generation
 ---
 
 <BaseLayout>
-  <div class="assets">
+  <section slot="overview">
+    <h2>Static Assets from `public` folder</h2>
+    <p>This pages assets are served from the `public` folder.</p>
+  </section>
+
+  <section class="assets">
     <img src="/cute_cat.jpg" alt="Cute Cat" width="400" />
 
     <a href="/example.js">Example JS Asset</a>
     <a href="/example.css">Example CSS Asset</a>
-  </div>
+  </section>
 
   <Feedback
     good={["The asset (image, css or js) is served!"]}
@@ -20,10 +25,15 @@ export const prerender = true; // Static site generation
     ]}
     bad={[]}
   />
-</BaseLayout>
 
-<style>
-  img {
-    border-radius: 8px;
-  }
-</style>
+  <style>
+    .assets {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    img {
+      border-radius: 8px;
+    }
+  </style>
+</BaseLayout>

@@ -5,6 +5,11 @@ import Feedback from "../components/feedback.astro";
 ---
 
 <BaseLayout>
+  <section slot="overview">
+    <h2>Island Architecture</h2>
+    <p>This page renders a Svelte component on the client.</p>
+  </section>
+
   <CuteDog client:only />
 
   <Feedback

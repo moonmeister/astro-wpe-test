@@ -11,6 +11,15 @@ Astro.response.headers.set(
 ---
 
 <BaseLayout>
+  <section slot="overview">
+    <h2>Server with Headers</h2>
+    <p>
+      This page is a server-side rendered page. It is generated on the server
+      and sent to the client. The page has `Cache-Control` headers set to allow
+      caching.
+    </p>
+  </section>
+
   <Feedback
     good={["`Cache-Control` headers are correctly set and respected!"]}
   />

@@ -6,6 +6,14 @@ export const prerender = false; // Server-side rendering
 ---
 
 <BaseLayout>
+  <section slot="overview">
+    <h2>Server-side Rendering</h2>
+    <p>
+      This page is a server-side rendered page. It is generated on the server
+      and sent to the client. The page has no `Cache-Control` headers set.
+    </p>
+  </section>
+
   <Feedback
     good={["The page is served!"]}
     warning={[
