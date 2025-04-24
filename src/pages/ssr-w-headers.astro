@@ -1,0 +1,17 @@
+---
+import Feedback from "../components/feedback.astro";
+import BaseLayout from "../layouts/base.astro";
+
+export const prerender = false; // Server-side rendering
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=30, stale-while-revalidate=30"
+);
+---
+
+<BaseLayout>
+  <Feedback
+    good={["`Cache-Control` headers are correctly set and respected!"]}
+  />
+</BaseLayout>

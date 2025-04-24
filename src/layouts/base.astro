@@ -18,11 +18,12 @@ import "@picocss/pico";
           <li><a href="/">Static Pages</a></li>
           <li><a href="/static-assets">Static Assets</a></li>
           <li><a href="/ssr">Server</a></li>
+          <li><a href="/ssr-w-headers">Server with Headers</a></li>
           <li><a href="/client">Client only</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="grid">
       <slot />
     </main>
     <footer>
@@ -31,3 +32,11 @@ import "@picocss/pico";
     </footer>
   </body>
 </html>
+
+<style>
+  main {
+    /* display: flex;
+    flex-direction: column; */
+    gap: 1rem;
+  }
+</style>

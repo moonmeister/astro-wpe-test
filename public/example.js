@@ -1,2 +1,5 @@
+/**
+ * This is an example JavaScript file.
+ */
+
 console.log("Hello, world!");
-console.log("This is a test.");

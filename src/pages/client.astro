@@ -1,13 +1,20 @@
 ---
 import BaseLayout from "../layouts/base.astro";
-import WIP from "../components/wip.astro";
+import CuteDog from "../components/cute-dog.svelte";
+import Feedback from "../components/feedback.astro";
 ---
 
 <BaseLayout>
-  <p>
-    This is a test site for the WP Engine Headless Platform. It is built using
-    Astro, various pages implement different features to test the platform.
-  </p>
+  <CuteDog client:only />
 
-  <WIP />
+  <Feedback
+    good={[
+      "The Astro Island Component is loaded on the client!",
+      " The JS assets have Cache-Control headers set for strong caching! `public, max-age=31536000, immutable`",
+    ]}
+    warning={[
+      "The page's default `Cache-Control` headers will not be set like for any other [SSG](/)/[SSR](/ssr) page..",
+    ]}
+    bad={[]}
+  />
 </BaseLayout>
