@@ -26,6 +26,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=10");
     ]}
     warning={[
       "The WP Engine Headless platform cache sits in front of the server. Astro Middleware is run on the server. This means middleware is not executed if page is served from the cache! If you need middleware to work correctly, you must be careful how `Cache-Control` headers are set to cache responses.",
+      "IF you're using middleware on Static Page routes, you must set the `Cache-Control` header to `no-store` or `no-cache` to ensure the middleware is executed on every request.",
+      "IF you're using middleware on SSR routes, you must set the `Cache-Control` header to `no-store` or `no-cache` to ensure the middleware is executed on every request.",
     ]}
   />
 </BaseLayout>
